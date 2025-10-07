@@ -1,0 +1,60 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.8.4/axios.js"></script>
+
+    <script>
+        async function  signup(){
+            const username = document.getElementById("signup-username").value;
+            const password = document.getElementById("signup-password").value;
+
+              await axios.post("http://localhost:3000/signup",{
+                username:username,
+                password:password
+            });
+           
+           
+            alert("u are signuped")
+
+        }
+    </script>
+</head>
+
+
+
+
+
+
+<body>
+            <p>signup</p>
+    <input   id="signup-username"  type="text" name="username" placeholder="usernmae">
+
+    <input  id="signup-password" type="text" name=""password placeholder="password">
+
+    <button onclick="signup()">submit</button>
+
+
+    <p>signin</p>
+    <input id="-signin-username" type="text" name="username" placeholder="usernmae">
+
+    <input type="text" name=""password placeholder="password">
+
+    <button onclick="signin()">submit</button>
+
+    <div>
+        suer information
+        <div id="information"></div>
+    </div>
+
+    <div>
+        logout
+        <button onclick="logout()">logout</button>
+    </div>
+
+
+</body>
+</html>
